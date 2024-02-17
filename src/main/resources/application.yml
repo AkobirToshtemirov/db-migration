@@ -1,9 +1,11 @@
 spring:
   datasource:
-    url: 'jdbc:postgresql://localhost:5432/pdp'
-    username: postgres
-    password: postgres
-    driver-class-name: org.postgresql.Driver
-
-flyway:
-  enabled: true
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: password
+    driver-class-name: org.h2.Driver
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+  liquibase:
+    change-log: /db/changelog/db.changelog.xml

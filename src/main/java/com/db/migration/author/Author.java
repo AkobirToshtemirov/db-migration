@@ -12,4 +12,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Builder
 public class Author implements Serializable {
+    private Long id;
+    private String firstName;
+    private String lastName;
 }

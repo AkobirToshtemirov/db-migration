@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="1" author="you">
+        <createTable tableName="job">
+            <column name="title" type="VARCHAR(255)"/>
+            <column name="min_salary" type="BIGINT"/>
+            <column name="max_salary" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="you">
+        <sql>ALTER TABLE job ADD CONSTRAINT min_salary_check CHECK (min_salary > 0)</sql>
+        <sql>ALTER TABLE job ADD CONSTRAINT max_salary_check CHECK (max_salary &lt;= 10000)</sql>
+    </changeSet>
+    <changeSet id="3" author="you">
+        <insert tableName="job">
+            <column name="title" value="Job Title 1"/>
+            <column name="min_salary" valueNumeric="2000"/>
+            <column name="max_salary" valueNumeric="5000"/>
+        </insert>
+        <insert tableName="job">
+            <column name="title" value="Job Title 2"/>
+            <column name="min_salary" valueNumeric="3000"/>
+            <column name="max_salary" valueNumeric="6000"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

@@ -1,4 +1,4 @@
-CREATE TABLE author
+CREATE TABLE IF NOT EXISTS author
 (
     id         BIGINT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(255),
