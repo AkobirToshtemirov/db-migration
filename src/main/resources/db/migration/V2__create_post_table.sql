@@ -1,4 +1,4 @@
-CREATE TABLE post
+CREATE TABLE IF NOT EXISTS post
 (
     id          BIGINT AUTO_INCREMENT PRIMARY KEY,
     title       VARCHAR(255),
